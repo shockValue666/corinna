@@ -19,7 +19,7 @@ const Page = () => {
                   Submit
                 </Button>
                 <p>
-                  Dont'have an account?{' '}
+                  Dont{"'"}have an account?{' '}
                   <Link href="/auth/sign-up" className='font-bold'>
                     Create One!
                   </Link>

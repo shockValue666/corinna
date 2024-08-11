@@ -20,7 +20,7 @@ const TypeSelectionForm:React.FC<Props> = ({
           Create an account
         </h2>
         <p className='text-iridium md:text-sm'>   
-          Tell us about yourself! What do you do let's tailor your
+          Tell us about yourself! What do you do let{"'"}s tailor your
           <br /> experience so it best suits you
         </p>
         <UserTypeCard 

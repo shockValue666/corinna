@@ -50,7 +50,7 @@ export const useSignUpForm = () => {
 
       onNext((prev) => prev + 1)
     } catch (error: any) {
-      // console.log("signup: ",signUp.missingFields)
+      console.log("signup: ",error)
       toast({
         title: 'Error',
         description: error.errors[0].longMessage,

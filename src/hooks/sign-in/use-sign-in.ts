@@ -34,7 +34,7 @@ export const useSignInForm = () => {
                         title: "Success",
                         description: "Welcome back",
                     })
-                    router.push("/dashboard");
+                    router.push("/settings");
                 }
             } catch (error:any) {
                 setLoading(false);

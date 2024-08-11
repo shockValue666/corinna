@@ -4,7 +4,8 @@ const nextConfig = {
     images:{
         remotePatterns:[
             {protocol:"https",hostname:"wordpress-1309640-4775910.cloudwaysapps.com"},
-            {protocol:"https",hostname:"wordpress-1311038-4782389.cloudwaysapps.com"}
+            {protocol:"https",hostname:"wordpress-1311038-4782389.cloudwaysapps.com"},
+            {protocol:"https",hostname:"ucarecdn.com"}
         ]
     }
 };

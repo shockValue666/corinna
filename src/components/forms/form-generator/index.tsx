@@ -13,7 +13,7 @@ type Props = {
     placeholder:string,
 
     label?:string,
-    register:UseFormRegister<FieldValues>,
+    register:UseFormRegister<any>,
     errors:FieldErrors<FieldValues>,
     
     lines?:number,

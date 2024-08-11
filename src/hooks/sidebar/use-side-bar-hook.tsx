@@ -2,8 +2,9 @@
 import { onGetConversationMode, onToggleRealtime } from '@/actions/conversation';
 import { useToast } from '@/components/ui/use-toast';
 import { useChatContext } from '@/context/use-chat-context';
+import { useClerk } from '@clerk/nextjs';
 import { usePathname, useRouter } from 'next/navigation';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const useSidebar = () => {
     const [expand, setExpand] = useState<boolean | undefined>(undefined)
@@ -39,9 +40,31 @@ const useSidebar = () => {
             setLoading(false);
         }
     }
-  return (
-    <div>UseSideBar</div>
-  )
+
+
+    useEffect(()=>{
+        if(chatRoom){
+            onGetCurrentMode()
+        }
+    },[chatRoom,
+        // onGetCurrentMode idk about that? maybe add it.
+    ])
+    const page = pathName.split("/").pop()
+    const {signOut} = useClerk();
+    const onSignOut = () => signOut(()=>router.push("/"))
+    const onExpand = () => setExpand((prev)=>!prev)
+  
+    return {
+        expand,
+        onExpand,
+        page,
+        onSignOut,
+        realtime,
+        onActivateRealTime,
+        chatRoom,
+        loading
+    }
+  
 }
 
 export default useSidebar

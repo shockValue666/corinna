@@ -9,6 +9,7 @@ type Props = {
 }
 const Page = async ({params}:Props) => {
     const post = await onGetBlogPost(params.id)
+    console.log("post: ",post)
 
   return (
     <div className='container flex justify-center my-10'>
